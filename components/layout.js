@@ -72,6 +72,7 @@ export default function Home() {
       </section>
 
       <h1> hello world</h1>
+      <h2> hello wood</h2>
 
 
         
