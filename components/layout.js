@@ -4,7 +4,7 @@ import styles from '../components/layout.module.css';
 export default function Home() {
   const [isSticky, setIsSticky] = useState(false);
 
-  // Handle sticky behavior
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -22,7 +22,7 @@ export default function Home() {
 
   return (
     <div className={styles.layout}>
-      {/* Navbar */}
+    
       <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
         <div className={styles.navLinks}>
           <a href="#home">Home</a>
@@ -32,9 +32,9 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Main Content */}
+
       <div className={styles.main}>
-        {/* Sections */}
+  
         <header id="home" className={styles.header}>
           <h1>Nutcha Junthong</h1>
           <p>Full Stack Developer</p>
@@ -72,15 +72,7 @@ export default function Home() {
       </section>
 
 
-        <section id="contact" className={styles.section}>
-          <h2>Contact</h2>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
-            <textarea placeholder="Message"></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </section>
+        
       </div>
     </div>
   );
