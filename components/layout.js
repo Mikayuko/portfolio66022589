@@ -1,18 +1,87 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Script from 'next/script';
+import { useEffect, useState } from 'react';
+import styles from '../components/layout.module.css';
 
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
-import Link from 'next/link';
+export default function Home() {
+  const [isSticky, setIsSticky] = useState(false);
 
-const name = '[Your Name]';
-export const siteTitle = 'Next.js Sample Website';
+  // Handle sticky behavior
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
 
-export default function Layout() {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div> 
-      <h1> hello world</h1>
+    <div className={styles.layout}>
+      {/* Navbar */}
+      <nav className={`${styles.navbar} ${isSticky ? styles.sticky : ''}`}>
+        <div className={styles.navLinks}>
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      {/* Main Content */}
+      <div className={styles.main}>
+        {/* Sections */}
+        <header id="home" className={styles.header}>
+          <h1>Nutcha Junthong</h1>
+          <p>Full Stack Developer</p>
+          <img src="/img/nahida.jpg" alt="Profile" className={styles.profileImage} />
+        </header>
+        
+
+      <section id="portfolio" className={styles.section}>
+          <h2>My Portfolio</h2>
+        <div className={styles.grid}>
+          <img src="/img/project.png" alt="project" />
+          <img src="/img/bmi1.png" alt="bmi" />
+        </div>
+      </section>
+      <section id="about" className={styles.section}>
+        <h2>About Me</h2>
+        <div className={styles.grid}>
+        <div className={styles.item}>
+          <img src="/img/html.png" alt="html" />
+          <p>HTML</p>
+        </div>
+        <div className={styles.item}>
+          <img src="/img/css.png" alt="css" />
+        <p>CSS</p>
+        </div>
+        <div className={styles.item}>
+          <img src="/img/java.png" alt="java" />
+          <p>Java</p>
+        </div>
+        <div className={styles.item}>
+          <img src="/img/python.png" alt="python" />
+          <p>Python</p>
+        </div>
+        </div>
+      </section>
+
+
+        <section id="contact" className={styles.section}>
+          <h2>Contact</h2>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send</button>
+          </form>
+        </section>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,126 @@
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.navbar a {
+  margin: 0 16px;
+  text-decoration: none;
+  color: #aed581;
+  font-size: 18px;
+}
+
+.navbar.sticky {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #f8f8f8;
+}
+
+.navLinks {
+  display: flex;
+  gap: 16px;
+}
+
+
+.main {
+  margin-top: 80px; /* Add space for fixed navbar */
+}
+
+.section {
+  padding: 64px 16px;
 }
 
 .header {
+  text-align: center;
+  padding: 64px;
+  color: #7cb342
+}
+.section {
+  text-align: center; /* จัดให้เนื้อหากึ่งกลาง */
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+  gap: 20px; /* เว้นระยะห่างระหว่างรูป */
+  justify-content: center; /* จัดให้อยู่กึ่งกลาง */
+}
+
+.grid img {
+  width: auto; /* ไม่จำกัดขนาด */
+  height: 100%; /* ให้ความสูงเป็น 100% ของกรอบ */
+  max-width: 100%; /* ให้กว้างสุดตามขนาดของกรอบ */
+  border-radius: 8px; /* มุมโค้ง */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid img:hover {
+  transform: scale(1.05); /* ขยายเล็กน้อยเมื่อ hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
+}
+.section {
+  text-align: center; /* จัดข้อความให้ตรงกลาง */
+  padding: 20px;
+  color: #7cb342;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+  gap: 20px; /* ระยะห่างระหว่างช่อง */
+  justify-content: center; /* จัดให้กริดอยู่ตรงกลาง */
+}
+
+.item {
+  display: flex;
+  flex-direction: column; /* ให้รูปและข้อความเรียงกันในแนวตั้ง */
+  align-items: center; /* จัดให้รูปและข้อความอยู่ตรงกลาง */
+  text-align: center; /* จัดข้อความให้ตรงกลาง */
+}
+
+.item img {
+  width: 100px; /* กำหนดขนาดรูป */
+  height: 100px; /* กำหนดขนาดรูป */
+  object-fit: contain; /* ทำให้รูปไม่บิดเบือน */
+  margin-bottom: 10px; /* เว้นระยะห่างระหว่างรูปกับข้อความ */
+}
+
+.item p {
+  font-weight: bold;
+}
+
+.item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 30px; /* เพิ่ม padding เพื่อให้กรอบห่างจากรูปมากขึ้น */
+  border: 2px solid #aed581; /* กรอบสีเทา */
+  border-radius: 10px; /* มุมกรอบโค้ง */
+  background-color: #f1f8e9;
+  margin: 10px; /* เพิ่ม margin เพื่อให้กรอบห่างกัน */
 }
 
-.backToHome {
-  margin: 3rem 0 0;
+.item img {
+  width: 80px; /* ขนาดรูป */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างรูปและข้อความ */
 }
+
+.item p {
+  font-weight: bold;
+  margin-top: 10px; /* เพิ่มระยะห่างระหว่างข้อความและกรอบ */
+}
+
