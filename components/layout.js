@@ -71,7 +71,8 @@ export default function Home() {
         </div>
       </section>
 
-      
+      <h1> hello world</h1>
+      <h2> hello wood</h2>
 
 
         
